@@ -1,22 +1,20 @@
-package com.yupi.project.model.entity;
+package com.yupi.project.model.dto.interfaceInfo;
 
-import com.baomidou.mybatisplus.annotation.*;
+
 import lombok.Data;
 
 import java.io.Serializable;
-import java.util.Date;
 
 /**
- * 接口信息
- * @TableName interface_info
+ * 更新请求
+ *
+ * @TableName product
  */
-@TableName(value ="interface_info")
 @Data
-public class InterfaceInfo implements Serializable {
+public class InterfaceInfoUpdateRequest implements Serializable {
     /**
      * 主键
      */
-    @TableId(type = IdType.AUTO)
     private Long id;
 
     /**
@@ -54,27 +52,5 @@ public class InterfaceInfo implements Serializable {
      */
     private String method;
 
-    /**
-     * 创建人
-     */
-    private Long userId;
-
-    /**
-     * 创建时间
-     */
-    private Date createTime;
-
-    /**
-     * 更新时间
-     */
-    private Date updateTime;
-
-    /**
-     * 是否删除(0-未删, 1-已删)
-     */
-    @TableLogic
-    private Integer isDelete;
-
-    @TableField(exist = false)
     private static final long serialVersionUID = 1L;
 }
